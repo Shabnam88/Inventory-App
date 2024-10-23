@@ -1,0 +1,80 @@
+@import "/fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    &,
+    &.light-mode {
+      --color-primary-900: 37, 99, 235;
+
+      --color-secondary-200: 30, 41, 59;
+      --color-secondary-300: 51, 65, 85;
+      --color-secondary-400: 71, 85, 105;
+      --color-secondary-500: 163, 175, 193;
+      --color-secondary-600: 165, 178, 195;
+      --color-secondary-700: 220, 227, 235;
+      --color-secondary-800: 241, 245, 249;
+    }
+
+    &.dark-mode {
+      --color-secondary-800: 30, 41, 59;
+      --color-secondary-700: 51, 65, 85;
+      --color-secondary-600: 71, 85, 105;
+      --color-secondary-500: 100, 116, 139;
+      --color-secondary-400: 148, 163, 184;
+      --color-secondary-300: 203, 213, 225;
+      --color-secondary-200: 226, 232, 240;
+    }
+  }
+}
+
+@layer components {
+  .form-container {
+    @apply text-xl text-secondary-300 font-bold mb-2;
+  }
+  .textField {
+    @apply bg-transparent rounded-xl border border-secondary-500 transition-all duration-300 ease-in-out text-secondary-400 w-full;
+  }
+  .btn {
+    @apply rounded-xl py-2;
+  }
+  .btn--primary {
+    @apply bg-secondary-500 text-secondary-200;
+  }
+  .btn--secondary {
+    @apply border border-secondary-400 text-secondary-400;
+  }
+  .product-number {
+    @apply flex flex-col justify-center items-center w-7 h-7 rounded-full bg-secondary-500 text-secondary-300 border-2 border-secondary-300 font-bold;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: "Vazir"; */
+}
+
+html,
+body {
+  min-height: 100vh;
+  user-select: none;
+  background-color: rgb(var(--background-app-rgb));
+}
+
+label {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+select > option {
+  background-color: rgb(var(--color-secondary-700));
+}
